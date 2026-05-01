@@ -1,0 +1,20 @@
+# 1. Clone original repo
+git clone https://github.com/freestyle-sh/adorable
+cd adorable
+
+# 2. Add Docker + fly config (files above)
+
+# 3. Login
+fly auth login
+
+# 4. Create app
+fly launch --no-deploy
+
+# 5. Set secrets
+fly secrets set DATABASE_URL=...
+fly secrets set REDIS_URL=...
+fly secrets set ANTHROPIC_API_KEY=...
+fly secrets set FREESTYLE_API_KEY=...
+
+# 6. Deploy
+fly deploy
